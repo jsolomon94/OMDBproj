@@ -1,0 +1,176 @@
+/*get better fonts than what we already have*/
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Rammetto+One|Yellowtail');
+
+html,body{
+    height: 100%;
+    min-width: 100%;
+    background: #2b5876; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2b5876 , #4e4376); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2b5876 , #4e4376); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-family: 'Rammetto One', cursive;
+
+}
+
+/*top part of page with opening text*/
+header{
+
+    color: #2b5876;
+    font-family: 'Bungee Shade', cursive;
+    /*font-family: 'Raleway', sans-serif;*/
+
+}
+
+header h1{
+
+    font-size: 400%;
+
+}
+
+.modal,#bottom{
+
+    color: #e43a15;
+
+}
+
+header div{
+
+    height: 100vh;
+    width: 100%;
+    display: table;
+    text-align: center;
+    background: #e43a15; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #e43a15 , #e65245); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #e43a15 , #e65245); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+header p{
+
+    font-family: 'Yellowtail', cursive;
+
+}
+
+/*get words into the middle of this colored box*/
+
+header #text{
+
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+/*formatting the bodies of the individual divs and their components*/
+
+#bottom, .modal-body{
+
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+
+
+}
+
+#bottom h2,.modal-body h2{
+
+    font-size: 200%;
+
+}
+
+img{
+
+    width: 45%;
+    height: 50%;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15%;
+
+}
+img:hover{
+
+    opacity:0.7 !important;
+    filter:alpha(opacity=70) !important; /* For IE8 and earlier */
+
+}
+
+/*keep this so the first image doesn't have a large gap between it and the header*/
+#image0{
+
+    padding-top: 5%;
+
+}
+
+.text-center{
+
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+
+/*this is so the paragraphs act according to my preferences*/
+#bottom p,.modal-body p {
+
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    font-size: 100%;
+
+
+}
+
+.modal{
+
+    background-color: black;
+
+
+}
+
+#seachbar{
+
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+}
+
+
+/*the following is to format the searchbar....because of my lack of css ability without
+a template, I used this formatting from online to get a crisp look
+ */
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}

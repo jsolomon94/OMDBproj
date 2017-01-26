@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OMDB Landing!</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style1.css">
+
+
+</head>
+<body onload="moviePics()">
+
+    <!-- Header begins -->
+    <header>
+        <div class="container-fluid">
+
+            <div id="text">
+                <h1>Let's Find A Movie</h1>
+                <p>Powered by OMDB</p>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container-fluid">
+
+        <div class="modal fade" id="myModal">
+
+            <div class="modal-dialog">
+
+                <!-- Modal content (Bootsrap)-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">One Second...</h4> <!--This is just in case the search takes longer than a split second (for whatever reason)-->
+                    </div>
+                    <div class="modal-body">
+                        <!--Movie info is injected into here when someone searches for it-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Searchbar begins here.... -->
+        <div class="container" id="seachbar">
+            <div class="row">
+                <div> <!--bar doesn't respond with every screen-->
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <!--put your movie names in here-->
+                            <input id = "searchtext" type="text" class="form-control input-lg" placeholder="search movie by title..." />
+                            <span class="input-group-btn">
+                                <!--May end up changing the search logo...but fine for now-->
+                        <button class="btn btn-info btn-lg" type="button" id="searchbtn">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom">
+            <h2>Here are a few titles that we carry</h2>
+            <ul  class="list-group list-unstyled" id="ul-1">
+            <!--jquery will inject the things into here....(movies and such)-->
+            </ul>
+
+            <span></span>
+            </div>
+        <div class="text-center">
+            <!--Just because it is annoying to scroll back to the top-->
+        <button class="btn btn-danger btn-lg" type="button" id="backtop">Back To Top</button>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
