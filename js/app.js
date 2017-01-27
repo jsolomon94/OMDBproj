@@ -36,6 +36,17 @@ function OMDBapiCall(input,callback,imgid,listid){
 
 }
 
+function OMDBapiCall2(input,callback){
+
+    $.getJSON('https://www.omdbapi.com/?s=' + encodeURI(input),function(response){
+
+        //use the callback function to do more things with this data
+        callback(response.Search, response.totalResults);
+
+    });
+
+}
+
 function getData(poster,imgid,listid,plot,rating,title,time,imdb,response){
 
     //append the data and the src for the picture according to the picture id and list id
@@ -45,16 +56,20 @@ function getData(poster,imgid,listid,plot,rating,title,time,imdb,response){
 
 }
 
-function getPopup(poster,imgid,listid,plot,rating,title,time,imdb,response){
+function getPopup(search, res){
 
     $(".modal-body").html(''); //take everything out of the modal because it will append to the older results if not
 
-    if(response !== "False") {
+    if( res > 0) {
 
-        //if the api doesn't have a movie (or someone type it in wrong this will not display
-        var element = "<img src='" + poster + "'/><h2>"+title+"</h2><p>" + plot + "</p><p>Rated: " + rating + "</p><p>Duration: " + time + "</p><p>IMDB Rating: " + imdb + "/10</p>"
-        $(".modal-body").append(element);
-        $(".modal-title").html("This title was found!");
+        $(".modal-title").html("Here are the results");
+
+        for(var i = 0; i < search.length; i++) {
+
+            OMDBapiCall(search[i].Title,getPopupInfo,i,null);
+
+
+        }
 
     }else{
 
@@ -64,7 +79,21 @@ function getPopup(poster,imgid,listid,plot,rating,title,time,imdb,response){
 
 
 }
+ //get the info for the search results
+function getPopupInfo(poster,imgid,listid,plot,rating,title,time,imdb,response){
 
+    var picpath;
+    var element;
+    var id = "hideme" + imgid;
+    (poster !=="N/A") ? picpath = poster : picpath = "img/no-image.png";
+
+    element = "<img src='" + picpath + "' onclick='displayFunc("+id+")'/><h2>" + title + "</h2><div id='"+id+"' style='display: none'><p>" + plot + "</p><p>Rated: " + rating + "</p><p>Duration: " + time + "</p><p>IMDB Rating: " + imdb + "/10</p></div>";
+    $(id).css('display','none');
+    $(".modal-body").append(element);
+
+}
+
+//call the 2nd api function
 $("#searchbtn").click(function (){
 
     var movie = $("#searchtext").val();
@@ -76,7 +105,7 @@ $("#searchbtn").click(function (){
 
     }else {
 
-        OMDBapiCall(movie, getPopup, null, null);
+        OMDBapiCall2(movie, getPopup);
         $("#myModal").modal()
         $('#searchtext').val('');
 
@@ -91,3 +120,19 @@ $("#backtop").click(function() {
         scrollTop: 0}, delay);
 
 });
+
+//toggle the display of the info
+function displayFunc(input){
+
+    if($(input).css('display') === 'none'){
+
+        $(input).css('display','unset');
+
+    }else{
+
+        $(input).css('display','none');
+
+    }
+
+
+}

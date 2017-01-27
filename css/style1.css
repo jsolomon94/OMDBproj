@@ -79,6 +79,12 @@ header #text{
 
 }
 
+.modal-body{
+
+    overflow: scroll;
+
+}
+
 img{
 
     width: 45%;
