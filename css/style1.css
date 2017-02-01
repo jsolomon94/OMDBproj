@@ -96,7 +96,7 @@ img{
 
 }
 
-#ul-1{
+#pad-this-div{
 
     padding-top: 5%;
 
@@ -148,6 +148,10 @@ img{
     padding-top: 5%;
     padding-bottom: 5%;
 
+}
+
+table td {
+    border-top: none !important;
 }
 
 

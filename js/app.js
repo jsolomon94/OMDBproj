@@ -16,7 +16,7 @@ function moviePics(){
         var listid = "list" + i;
         var poster = "";
         //give it an id based on where the index is
-        var element = "<tr><td><img id='"+imgid+"'></td><td id='"+listid+"'></td></tr>";
+        var element = "<tr><td><img id='"+imgid+"'></td></tr><tr><td id='"+listid+"'></td></tr>";
         $("#ul-1").append(element);
         OMDBapiCall(movie,getData,imgid,listid);
 
@@ -58,7 +58,7 @@ function getData(poster,imgid,listid,plot,rating,title,time,imdb,response){
 
 function getPopup(search, res){
 
-    $(".modal-body").html(''); //take everything out of the modal because it will append to the older results if not
+    $(".modal-table").html(""); //take everything out of the modal because it will append to the older results if not
 
     if( res > 0) {
 
@@ -87,9 +87,9 @@ function getPopupInfo(poster,imgid,listid,plot,rating,title,time,imdb,response){
     var id = "hideme" + imgid;
     (poster !=="N/A") ? picpath = poster : picpath = "img/no-image.png";
 
-    element = "<img src='" + picpath + "' onclick='displayFunc("+id+")'/><h2>" + title + "</h2><div id='"+id+"' style='display: none'><p>" + plot + "</p><p>Rated: " + rating + "</p><p>Duration: " + time + "</p><p>IMDB Rating: " + imdb + "/10</p></div>";
+    element = "<tr><td><img src='" + picpath + "' onclick='displayFunc("+id+")'/></td></tr><tr><td><h2>" + title + "</h2><div id='"+id+"' style='display: none'><p>" + plot + "</p><p>Rated: " + rating + "</p><p>Duration: " + time + "</p><p>IMDB Rating: " + imdb + "/10</p></div></td></tr>";
     $(id).css('display','none');
-    $(".modal-body").append(element);
+    $(".modal-table").append(element);
 
 }
 

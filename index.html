@@ -44,8 +44,13 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">One Second...</h4> <!--This is just in case the search takes longer than a split second (for whatever reason)-->
                     </div>
-                    <div class="modal-body">
-                        <!--Movie info is injected into here when someone searches for it-->
+                    <div class="modal-body table-responsive">
+                      <table class="table modal-table">
+
+                          <!--Movie info is injected into here when someone searches for it-->
+
+                      </table>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -78,7 +83,7 @@
 
         <div id="bottom">
             <h2>Here are a few titles that we carry</h2>
-            <div class="table-responsive">
+            <div id="pad-this-div">
             <table class="table table-hover">
             <tbody id="ul-1">
 
