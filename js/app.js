@@ -16,7 +16,7 @@ function moviePics(){
         var listid = "list" + i;
         var poster = "";
         //give it an id based on where the index is
-        var element = "<li id='"+listid+"'><img id='"+imgid+"'></li>";
+        var element = "<tr><td><img id='"+imgid+"'></td><td id='"+listid+"'></td></tr>";
         $("#ul-1").append(element);
         OMDBapiCall(movie,getData,imgid,listid);
 

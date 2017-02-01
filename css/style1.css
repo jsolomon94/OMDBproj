@@ -95,19 +95,25 @@ img{
     padding-top: 15%;
 
 }
-img:hover{
 
-    opacity:0.7 !important;
-    filter:alpha(opacity=70) !important; /* For IE8 and earlier */
-
-}
-
-/*keep this so the first image doesn't have a large gap between it and the header*/
-#image0{
+#ul-1{
 
     padding-top: 5%;
 
 }
+/*img:hover{
+
+    opacity:0.7 !important;
+    filter:alpha(opacity=70) !important; !* For IE8 and earlier *!
+
+}*/
+
+/*keep this so the first image doesn't have a large gap between it and the header*/
+/*#image0{
+
+    padding-top: 5%;
+
+}*/
 
 .text-center{
 
