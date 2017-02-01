@@ -88,7 +88,7 @@ header #text{
 img{
 
     width: 45%;
-    height: 50%;
+    height: inherit;
     display:block;
     margin-left: auto;
     margin-right: auto;
