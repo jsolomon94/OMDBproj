@@ -62,7 +62,7 @@ function getPopup(search, res){
 
     if( res > 0) {
 
-        $(".modal-title").html("Here are the results");
+        $(".modal-title").html("Here are the results (Click the images for info)");
 
         for(var i = 0; i < search.length; i++) {
 
@@ -83,11 +83,20 @@ function getPopup(search, res){
 function getPopupInfo(poster,imgid,listid,plot,rating,title,time,imdb,response){
 
     var picpath;
+    var plot1;
+    var rating1;
+    var time1;
+    var imdb1;
     var element;
     var id = "hideme" + imgid;
-    (poster !=="N/A") ? picpath = poster : picpath = "img/no-image.png";
 
-    element = "<tr><td><img src='" + picpath + "' onclick='displayFunc("+id+")'/></td></tr><tr><td><h2>" + title + "</h2><div id='"+id+"' style='display: none'><p>" + plot + "</p><p>Rated: " + rating + "</p><p>Duration: " + time + "</p><p>IMDB Rating: " + imdb + "/10</p></div></td></tr>";
+    (plot !=="N/A") ? plot1 = plot : plot1 = "The plot for this movie is unknown";
+    (poster !=="N/A") ? picpath = poster : picpath = "img/no-image.png";
+    (rating !=="N/A") ? rating1 = rating : rating1 = "Unknown";
+    (time !=="N/A") ? time1 = time : time1 = "Unknown";
+    (imdb !=="N/A") ? imdb1 = imdb + "/10" : imdb1 = "Unknown";
+
+    element = "<tr><td><img src='" + picpath + "' onclick='displayFunc("+id+")'/></td></tr><tr><td><h2>" + title + "</h2><div id='"+id+"' style='display: none'><p>" + plot1 + "</p><p>Rated: " + rating1 + "</p><p>Duration: " + time1 + "</p><p>IMDB Rating: " + imdb1 + "</p></div></td></tr>";
     $(id).css('display','none');
     $(".modal-table").append(element);
 
