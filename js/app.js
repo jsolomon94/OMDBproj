@@ -7,7 +7,7 @@ var movieArr = ["E.T.","Insidious","27 Dresses","Forrest Gump"];
 var delay = 1500;
 
 //make sure to inject the results of your movie array into the ul
-function moviePics(){
+$(window).bind("load",function(){
 
     for(var i=0; i < movieArr.length; i++) {
 
@@ -22,7 +22,7 @@ function moviePics(){
 
     }
 
-}
+});
 
 
 function OMDBapiCall(input,callback,imgid,listid){
